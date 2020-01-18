@@ -20,9 +20,10 @@ class CreateStatesTable extends Migration
             $table->text('description')->nullable();
             $table->text('biosecurity')->nullable();
             $table->text('weather')->nullable();
-            $table->text('police_number',20)->nullable();
+            $table->string('police_number',20)->nullable();
             $table->string('firemen_number',20)->nullable();
             $table->string('medical_number',20)->nullable();
+            $table->string('government_number',20)->nullable();
             $table->string('ext1',200)->nullable();
             $table->string('ext2',200)->nullable();
             $table->timestamps();

@@ -16,10 +16,11 @@ class State extends Model
         'biodiversity',
         'ext1',
         'ext2',
-        'wheater',
+        'weather',
         'police_number',
         'firemen_number',
-        'medical_number'
+        'medical_number',
+        'government_number'
     ];
 
 

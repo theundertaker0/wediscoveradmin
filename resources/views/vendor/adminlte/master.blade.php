@@ -10,6 +10,7 @@
     @if(! config('adminlte.enabled_laravel_mix'))
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+        <link rel="stylesheet" href="{{asset('vendor/toastr/toastr.min.css')}}">
 
     @include('adminlte::plugins', ['type' => 'css'])
 
@@ -32,6 +33,7 @@
 <script src="{{ asset('vendor/jquery/jquery.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+<script src="{{asset('vendor/toastr/toastr.min.js')}}"></script>
 
 @include('adminlte::plugins', ['type' => 'js'])
 

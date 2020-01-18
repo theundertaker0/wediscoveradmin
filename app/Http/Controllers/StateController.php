@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\State;
 
 class StateController extends Controller
 {
@@ -13,7 +14,8 @@ class StateController extends Controller
      */
     public function index()
     {
-        //
+        $states=State::all();
+        return view('states.index',compact('states'));
     }
 
     /**
@@ -23,7 +25,7 @@ class StateController extends Controller
      */
     public function create()
     {
-        //
+        return view('states.create');
     }
 
     /**
@@ -34,7 +36,9 @@ class StateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        State::create($request->all());
+        toastr()->success('Estado guardado con éxito');
+        return redirect()->route('states.index');
     }
 
     /**
