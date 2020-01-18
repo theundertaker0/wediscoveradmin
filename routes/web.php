@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(["register"=>false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['before' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('users','UserController')->except(['show']);
+    Route::resource('states','StateController');
+});

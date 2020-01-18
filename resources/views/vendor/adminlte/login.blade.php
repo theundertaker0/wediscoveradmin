@@ -31,6 +31,7 @@
 @section('body')
     <div class="login-box">
         <div class="login-logo">
+            <img src="{{asset('vendor/adminlte/dist/img/logosolo128px.png')}}" alt="Logo weDiscover" width="64px">
             <a href="{{ $dashboard_url }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
         </div>
         <div class="card">

@@ -31,7 +31,7 @@ return [
     */
 
     'logo' => '<b>We</b>Discover',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'vendor/adminlte/dist/img/logosolo128px.png',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -173,85 +173,41 @@ return [
     */
 
     'menu' => [
+
+        ['header' => 'ADMINISTRADORES'],
         [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
+            'text' => 'Nuevo Administrador',
+            'url'  => 'users/create',
+            'icon' => 'fas fa-fw fa-user-plus',
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Ver Administradores',
+            'url'  => 'users',
+            'icon' => 'fas fa-fw fa-users',
+        ],
+        ['header' => 'ESTADOS'],
+        [
+            'text' => 'Nuevo Estado',
+            'url'  => 'states/create',
+            'icon' => 'fas fa-fw fa-plus',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Administrar Estados',
+            'url'  => 'states',
+            'icon' => 'fas fa-fw fa-map',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'LOCALIDADES'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Nueva Localidad',
+            'url'  => 'locations/create',
+            'icon' => 'fas fa-fw fa-plus',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Administrar Localidades',
+            'url'  => 'locations',
+            'icon' => 'fas fa-fw fa-location-arrow',
         ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
-        ],
+
     ],
 
     /*
@@ -291,7 +247,7 @@ return [
     'plugins' => [
         [
             'name' => 'Datatables',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -339,7 +295,7 @@ return [
         ],
         [
             'name' => 'Sweetalert2',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
