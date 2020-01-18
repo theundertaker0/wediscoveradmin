@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\State;
+use App\Location;
 
 class StateController extends Controller
 {
@@ -49,7 +50,8 @@ class StateController extends Controller
      */
     public function show($id)
     {
-        //
+        $state=State::find($id);
+        return view('states.show',compact('state'));
     }
 
     /**
@@ -60,7 +62,8 @@ class StateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $state=State::find($id);
+        return view('states.edit',compact('state'));
     }
 
     /**
@@ -72,7 +75,10 @@ class StateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $state=State::find($id);
+        $state->update($request->all());
+        toastr()->success('Estado editado con éxito');
+        return redirect()->route('states.index');
     }
 
     /**
@@ -83,6 +89,10 @@ class StateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $state=State::find($id);
+        $state->delete();
+        toastr()->success('Estado eliminado con éxito');
+        return redirect()->route('states.index');
+
     }
 }
