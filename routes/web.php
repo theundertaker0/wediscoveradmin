@@ -22,4 +22,5 @@ Route::group(['before' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('users','UserController')->except(['show']);
     Route::resource('states','StateController');
+    Route::resource('locations','LocationController');
 });

@@ -49,6 +49,7 @@ class UserController extends Controller
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
         $user->save();
+        toastr()->success('Administrador almacenado con éxito');
         return redirect()->route('users.index');
     }
 
@@ -91,6 +92,7 @@ class UserController extends Controller
             $user->password=Hash::make($request->password);
         }
         $user->update();
+        toastr()->success('Administrador editado con éxito');
         return redirect()->route('users.index');
     }
 
@@ -104,6 +106,7 @@ class UserController extends Controller
     {
         $user=User::find($id);
         $user->delete();
+        toastr()->success('Administrador eliminado con éxito');
         return redirect()->route('users.index');
     }
 }

@@ -11,7 +11,7 @@ class State extends Model
     use SoftDeletes;
     use SoftCascadeTrait;
     protected $dates=['deleted_at'];
-   // protected $softCascade=['locations'];
+    protected $softCascade=['locations'];
     protected $fillable=[
         'name',
         'short_name',
