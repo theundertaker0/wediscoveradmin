@@ -11,6 +11,10 @@
 |
 */
 
+if (App::environment('development')) {
+    URL::forceScheme('https');
+}
+
 Route::get('/', function () {
     return view('welcome');
 });
