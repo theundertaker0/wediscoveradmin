@@ -46,6 +46,10 @@
                     </table>
                 </div>
             </div>
+            <!--Botonera-->
+            <div class="col-12 text-center">
+                <a href="{{route('home')}}" class="btn btn-info">Regresar</a>
+            </div>
         </div>
     </div>
 @stop

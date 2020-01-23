@@ -48,8 +48,8 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="ecology">Ecología</label>
-                            <textarea name="ecology" id="ecology" class="form-control">{!! $location->ecology !!}
+                            <label for="biodiversity">Biodiversidad</label>
+                            <textarea name="biodiversity" id="biodiversity" class="form-control">{!! $location->ecology !!}
                             </textarea>
                         </div>
                     </div>

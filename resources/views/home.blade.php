@@ -12,9 +12,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center text-bold">Escritorio de Administrador de la plataforma WeDiscover</div>
+                <div class="card-header text-center text-bold">Escritorio de Administrador de la Plataforma WeDiscover</div>
 
-                <div class="card-body">
+                <div class="card-body text-center">
                    Utilice el menú de la izquierda para navegar entre las opciones disponbles
                 </div>
             </div>

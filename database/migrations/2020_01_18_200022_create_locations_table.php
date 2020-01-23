@@ -20,7 +20,7 @@ class CreateLocationsTable extends Migration
             $table->bigInteger('state_id')->unsigned();
             $table->foreign('state_id')->references('id')->on('states');
             $table->text('description')->nullable();
-            $table->text('ecology')->nullable();
+            $table->text('biodiversity')->nullable();
             $table->text('environmental')->nullable();
             $table->text('culture')->nullable();
             $table->text('archeology')->nullable();

@@ -13,7 +13,7 @@ class Location extends Model
         'short_description',
         'description',
         'state_id',
-        'ecology',
+        'biodiversity',
         'environmental',
         'culture',
         'archeology',

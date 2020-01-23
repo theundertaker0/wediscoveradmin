@@ -27,8 +27,8 @@
                         <p>{!!$location->description!!}</p>
                     </li>
                     <li class="list-group-item">
-                        <p class="text-bold"> Ecología:</p>
-                        <p>{!!$location->ecology!!}</p>
+                        <p class="text-bold"> Biodiversidad:</p>
+                        <p>{!!$location->biodiversity!!}</p>
                     </li>
                     <li class="list-group-item">
                         <p class="text-bold"> Ambiental:</p>

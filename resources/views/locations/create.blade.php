@@ -42,8 +42,8 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="ecology">Ecología</label>
-                            <textarea name="ecology" id="ecology" class="form-control"></textarea>
+                            <label for="biodiversity">Biodiversidad</label>
+                            <textarea name="biodiversity" id="biodiversity" class="form-control"></textarea>
                         </div>
                     </div>
                     <div class="col-12">

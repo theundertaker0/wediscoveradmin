@@ -23,4 +23,5 @@ Route::group(['before' => 'auth'], function () {
     Route::resource('users','UserController')->except(['show']);
     Route::resource('states','StateController');
     Route::resource('locations','LocationController');
+    Route::resource('questions','QuestionController');
 });

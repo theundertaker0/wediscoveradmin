@@ -207,6 +207,17 @@ return [
             'url'  => 'locations',
             'icon' => 'fas fa-fw fa-location-arrow',
         ],
+        ['header' => 'PREGUNTAS FRECUENTES'],
+        [
+            'text' => 'Nueva Pregunta',
+            'url'  => 'questions/create',
+            'icon' => 'fas fa-fw fa-plus',
+        ],
+        [
+            'text' => 'Administrar Preguntas',
+            'url'  => 'questions',
+            'icon' => 'fas fa-fw fa-question',
+        ],
 
     ],
 
