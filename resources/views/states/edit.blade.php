@@ -79,6 +79,10 @@
         </div>
     </form>
 @stop
-@section('adminlte_js')
-    <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+@section('js')
+    <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('biosecurity');
+        CKEDITOR.replace('weather');
+    </script>
 @stop

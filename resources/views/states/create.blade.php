@@ -54,7 +54,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="biosecurity">Bioseguridad</label>
-                            <textarea name="biosecurity" id="biosecurity" class="form-control"></textarea>
+                            <textarea name="biosecurity" id="biosecurity" class="form-control tinymce"></textarea>
                         </div>
                     </div>
                     <div class="col-12">
@@ -74,6 +74,12 @@
         </div>
     </form>
 @stop
-@section('adminlte_js')
-        <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+
+
+@section('js')
+    <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('biosecurity');
+        CKEDITOR.replace('weather');
+    </script>
 @stop

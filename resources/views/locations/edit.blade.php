@@ -119,6 +119,18 @@
         </div>
     </form>
 @stop
-@section('adminlte_js')
-    <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+@section('js')
+    <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('description');
+        CKEDITOR.replace('biodiversity');
+        CKEDITOR.replace('environmental');
+        CKEDITOR.replace('culture');
+        CKEDITOR.replace('archeology');
+        CKEDITOR.replace('history');
+        CKEDITOR.replace('economy');
+        CKEDITOR.replace('sustainable_development');
+        CKEDITOR.replace('demography');
+        CKEDITOR.replace('gastronomy');
+    </script>
 @stop
