@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Location;
 use App\State;
+use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 
 class LocationController extends Controller
@@ -27,6 +28,8 @@ class LocationController extends Controller
     public function create()
     {
         $states=State::all();
+        Mapper::map(20.967076, -89.62374,['zoom'=>8,'marker' => false]);
+        Mapper::marker(20.967076, -89.62374,['draggable'=> true,'eventDragEnd' => 'coordenadas(maps)']);
         return view('locations.create',compact('states'));
     }
 
@@ -52,6 +55,8 @@ class LocationController extends Controller
     public function show($id)
     {
         $location=Location::find($id);
+        Mapper::map($location->lat, $location->lng,['zoom'=>10,'marker' => false]);
+        Mapper::marker($location->lat, $location->lng,['draggable'=> false]);
         return view('locations.show',compact('location'));
     }
 
@@ -65,6 +70,8 @@ class LocationController extends Controller
     {
         $states=State::all();
         $location=Location::find($id);
+        Mapper::map($location->lat, $location->lng,['zoom'=>10,'marker' => false]);
+        Mapper::marker($location->lat, $location->lng,['draggable'=> true,'eventDragEnd' => 'coordenadas(maps)']);
         return view('locations.edit',compact('states','location'));
     }
 

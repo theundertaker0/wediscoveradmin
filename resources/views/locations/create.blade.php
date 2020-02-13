@@ -7,6 +7,8 @@
 @section('content')
     <form action="{{route('locations.store')}}" method="POST">
         @csrf
+        <input type="hidden" value="0" name="lat" id="lat">
+        <input type="hidden" value="0" name="lng" id="lng">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
                 <div class="row">
@@ -25,6 +27,11 @@
                                     <option value="{{$state->id}}">{{$state->name}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group" style="width: 100%;height: 300px; border-radius: 4px;">
+                            {!!Mapper::render()!!}
                         </div>
                     </div>
                     <div class="col-12">
@@ -117,5 +124,12 @@
         CKEDITOR.replace('sustainable_development');
         CKEDITOR.replace('demography');
         CKEDITOR.replace('gastronomy');
+        //Captura las coordenadas de donde se soltó el mapa
+        function coordenadas(mapas) {
+            $('#lat').val(mapas[0].markers[0].getPosition().lat());
+            $('#lng').val(mapas[0].markers[0].getPosition().lng());
+            console.log($('#lat').val());
+            console.log($('#lng').val());
+        }
     </script>
 @stop
