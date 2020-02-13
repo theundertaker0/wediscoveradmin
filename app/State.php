@@ -23,7 +23,9 @@ class State extends Model
         'police_number',
         'firemen_number',
         'medical_number',
-        'government_number'
+        'government_number',
+        'lat',
+        'lng'
     ];
 
 

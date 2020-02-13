@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2",
         "askedio/laravel-soft-cascade": "^6.0",
+        "cornford/googlmapper": "^2.35",
         "fideloper/proxy": "^4.0",
         "jeroennoten/laravel-adminlte": "^3.0",
         "laravel/framework": "^6.2",

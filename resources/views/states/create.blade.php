@@ -7,6 +7,8 @@
 @section('content')
     <form action="{{route('states.store')}}" method="POST">
         @csrf
+        <input type="hidden" value="0" name="lat" id="lat">
+        <input type="hidden" value="0" name="lng" id="lng">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
                 <div class="row">
@@ -20,6 +22,11 @@
                         <div class="form-group">
                             <label for="short_name">Nombre Corto</label>
                             <input type="text" name="short_name" id="short_name" class="form-control" placeholder="ej. YN" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group" style="width: 100%;height: 300px; border-radius: 4px;">
+                            {!!Mapper::render()!!}
                         </div>
                     </div>
                     <div class="col-12 text-center">
@@ -81,5 +88,12 @@
     <script>
         CKEDITOR.replace('biosecurity');
         CKEDITOR.replace('weather');
+        //Captura las coordenadas de donde se soltó el mapa
+        function coordenadas(mapas) {
+            $('#lat').val(mapas[0].markers[0].getPosition().lat());
+            $('#lng').val(mapas[0].markers[0].getPosition().lng());
+            console.log($('#lat').val());
+            console.log($('#lng').val());
+        }
     </script>
 @stop

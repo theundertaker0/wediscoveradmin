@@ -18,6 +18,13 @@
                         <p>{{$state->short_name}}</p>
                     </li>
                     <li class="list-group-item">
+                        <div class="col-12">
+                            <div class="form-group" style="width: 100%;height: 300px; border-radius: 4px;">
+                                {!!Mapper::render()!!}
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
                         <p class="text-bold"> Teléfonos:</p>
                         <ul class="list-inline">
                             <li class="list-inline-item">Policía: {{$state->police_number}}</li>

@@ -29,6 +29,8 @@ class CreateLocationsTable extends Migration
             $table->text('sustainable_development')->nullable();
             $table->text('demography')->nullable();
             $table->text('gastronomy')->nullable();
+            $table->string('lat',150);
+            $table->string('lng',150);
             $table->string('ext1',200)->nullable();
             $table->string('ext2',200)->nullable();
             $table->timestamps();

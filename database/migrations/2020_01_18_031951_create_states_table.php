@@ -24,6 +24,8 @@ class CreateStatesTable extends Migration
             $table->string('firemen_number',20)->nullable();
             $table->string('medical_number',20)->nullable();
             $table->string('government_number',20)->nullable();
+            $table->string('lat',150);
+            $table->string('lng',150);
             $table->string('ext1',200)->nullable();
             $table->string('ext2',200)->nullable();
             $table->timestamps();

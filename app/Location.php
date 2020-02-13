@@ -22,6 +22,8 @@ class Location extends Model
         'sustainable_development',
         'demography',
         'gastronomy',
+        'lat',
+        'lng',
         'ext1',
         'ext2'
     ];
