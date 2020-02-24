@@ -94,4 +94,9 @@ class QuestionController extends Controller
         return redirect()->route('questions.index');
 
     }
+
+    public function getFaqs(){
+        $faqs=Question::all();
+        return response()->json($faqs);
+    }
 }
