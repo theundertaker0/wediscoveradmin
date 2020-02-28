@@ -155,4 +155,11 @@ class StateController extends Controller
         return redirect()->route('states.index');
 
     }
+
+    //Métodos para la API
+    public function getStates(){
+        $states=State::all();
+        return response()->json($states);
+    }
+
 }
