@@ -5,12 +5,23 @@
 @stop
 
 @section('content')
-    <form action="{{route('states.update',$state->id)}}" method="POST">
+    <form action="{{route('states.update',$state->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="_method" value="PUT">
         <input type="hidden" value="{{$state->lat}}" name="lat" id="lat">
         <input type="hidden" value="{{$state->lng}}" name="lng" id="lng">
         <div class="row">
+            <div class="col-12">
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
             <div class="col-12 col-md-8 offset-md-2">
                 <div class="row">
                     <div class="col-12 col-md-10">
@@ -23,6 +34,14 @@
                         <div class="form-group">
                             <label for="short_name">Nombre Corto</label>
                             <input type="text" name="short_name" id="short_name" class="form-control" placeholder="ej. YN" maxlength="20" value="{{$state->short_name}}">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="image">Imagen (max:2048 px)*</label>
+                            <input type="file" id="image" name="image" >
+                            <img src="{{asset('images/states/'.$state->image)}}" class="img-thumbnail" width="100" />
+                            <input type="hidden" name="hidden_image" value="{{ $state->image }}" />
                         </div>
                     </div>
                     <div class="col-12">

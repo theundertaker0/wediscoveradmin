@@ -15,6 +15,7 @@
                             <th class="text-center">Id</th>
                             <th class="text-center">Nombre</th>
                             <th class="text-center">Nombre Corto</th>
+                            <th class="text-center">Imagen</th>
                             <th class="text-center">Ver</th>
                             <th class="text-center">Editar</th>
                             <th class="text-center">Eliminar</th>
@@ -26,6 +27,7 @@
                                 <td>{{$state->id}}</td>
                                 <td>{{$state->name}}</td>
                                 <td>{{$state->short_name}}</td>
+                                <td class="text-center"><img src="{{ asset('/images/states/'.$state->image) }}" class="img-thumbnail" width="75" /></td>
                                 <td class="text-center">
                                     <a href="{{route('states.show',$state->id)}}" class="btn btn-secondary text-white"><span class="fa fa-eye"></span></a>
                                 </td>
@@ -90,7 +92,7 @@
             $('#tblStates').DataTable({
                 "columnDefs": [
 
-                    { "orderable": false, "targets": [3,4,5] }
+                    { "orderable": false, "targets": [4,5,6] }
                 ],
                 language: {
                     "decimal": "",

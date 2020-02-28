@@ -17,6 +17,7 @@ class CreateStatesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name',200);
             $table->string('short_name',10)->nullable();
+            $table->string('image',300);
             $table->text('description')->nullable();
             $table->text('biosecurity')->nullable();
             $table->text('weather')->nullable();

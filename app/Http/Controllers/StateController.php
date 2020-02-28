@@ -40,7 +40,29 @@ class StateController extends Controller
      */
     public function store(Request $request)
     {
-        State::create($request->all());
+        $request->validate([
+            'image'         =>  'required|image|max:2048'
+        ]);
+        $image = $request->file('image');
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images/states'), $new_name);
+        $form_data = array(
+            'name'       =>   $request->name,
+            'short_name'        =>   $request->short_name,
+            'image'            =>   $new_name,
+            'description'       =>   $request->description,
+            'biosecurity'        =>   $request->biosecurity,
+            'ext1'            =>  $request->ext1,
+            'ext2'       =>   $request->ext2,
+            'weather'        =>   $request->weather,
+            'police_number'            =>   $request->police_number,
+            'firemen_number'       =>   $request->firemen_number,
+            'medical_number'        =>   $request->medical_number,
+            'government_number'            =>   $request->government_number,
+            'lat'       =>   $request->lat,
+            'lng'        =>   $request->lng,
+        );
+        State::create($form_data);
         toastr()->success('Estado guardado con éxito');
         return redirect()->route('states.index');
     }
@@ -82,8 +104,39 @@ class StateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $state=State::find($id);
-        $state->update($request->all());
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+        if($image != '')
+        {
+
+            $request->validate([
+               'image'         =>  'image|max:2048'
+            ]);
+
+            $oldImg=public_path().'/images/states/'.$image_name;
+            if(@getimagesize($oldImg)){
+                unlink($oldImg);
+            }
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/states'), $image_name);
+        }
+        $form_data = array(
+            'name'       =>   $request->name,
+            'short_name'        =>   $request->short_name,
+            'image'            =>   $image_name,
+            'description'       =>   $request->description,
+            'biosecurity'        =>   $request->biosecurity,
+            'ext1'            =>  $request->ext1,
+            'ext2'       =>   $request->ext2,
+            'weather'        =>   $request->weather,
+            'police_number'            =>   $request->police_number,
+            'firemen_number'       =>   $request->firemen_number,
+            'medical_number'        =>   $request->medical_number,
+            'government_number'            =>   $request->government_number,
+            'lat'       =>   $request->lat,
+            'lng'        =>   $request->lng,
+        );
+        State::whereId($id)->update($form_data);
         toastr()->success('Estado editado con éxito');
         return redirect()->route('states.index');
     }

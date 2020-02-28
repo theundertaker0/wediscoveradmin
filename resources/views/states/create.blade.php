@@ -5,11 +5,22 @@
 @stop
 
 @section('content')
-    <form action="{{route('states.store')}}" method="POST">
+    <form action="{{route('states.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="hidden" value="0" name="lat" id="lat">
         <input type="hidden" value="0" name="lng" id="lng">
         <div class="row">
+            <div class="col-12">
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
             <div class="col-12 col-md-8 offset-md-2">
                 <div class="row">
                     <div class="col-12 col-md-10">
@@ -22,6 +33,12 @@
                         <div class="form-group">
                             <label for="short_name">Nombre Corto</label>
                             <input type="text" name="short_name" id="short_name" class="form-control" placeholder="ej. YN" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="image">Imagen (max:2048 px)*</label>
+                            <input type="file" id="image" name="image" >
                         </div>
                     </div>
                     <div class="col-12">
@@ -57,7 +74,7 @@
                             <input type="text" name="government_number" id="government_number" class="form-control" placeholder="ej. 9999999999" maxlength="20" minlength="10" pattern="[0-9]+">
                         </div>
                     </div>
-                    <!--Áreas de texto para biodiversidad y clima-->
+                    <!--Áreas de texto para bioseguridad y clima-->
                     <div class="col-12">
                         <div class="form-group">
                             <label for="biosecurity">Bioseguridad</label>

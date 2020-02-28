@@ -15,8 +15,9 @@ class State extends Model
     protected $fillable=[
         'name',
         'short_name',
+        'image',
         'description',
-        'biodiversity',
+        'biosecurity',
         'ext1',
         'ext2',
         'weather',
