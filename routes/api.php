@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('v1/faqs','QuestionController@getFaqs');
 Route::get('v1/states','StateController@getStates');
+
