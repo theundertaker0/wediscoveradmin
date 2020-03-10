@@ -5,12 +5,23 @@
 @stop
 
 @section('content')
-    <form action="{{route('locations.update',$location->id)}}" method="POST">
+    <form action="{{route('locations.update',$location->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="_method" value="PUT">
         <input type="hidden" value="{{$location->lat}}" name="lat" id="lat">
         <input type="hidden" value="{{$location->lng}}" name="lng" id="lng">
         <div class="row">
+            <div class="col-12">
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
             <div class="col-12 col-md-8 offset-md-2">
                 <div class="row">
                     <div class="col-12 col-md-8">
@@ -35,6 +46,14 @@
                         </div>
                     </div>
                     <div class="col-12">
+                        <div class="form-group">
+                            <label for="image">Imagen (max:2048 px)*</label>
+                            <input type="file" id="image" name="image" >
+                            <img src="{{asset('images/locations/'.$location->image)}}" class="img-thumbnail" width="100" />
+                            <input type="hidden" name="hidden_image" value="{{ $state->image }}" />
+                        </div>
+                    </div>
+                    <div class="col-12">
                         <div class="form-group" style="width: 100%;height: 300px; border-radius: 4px;">
                             {!!Mapper::render()!!}
                         </div>
@@ -56,7 +75,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="biodiversity">Biodiversidad</label>
-                            <textarea name="biodiversity" id="biodiversity" class="form-control">{!! $location->ecology !!}
+                            <textarea name="biodiversity" id="biodiversity" class="form-control">{!! $location->biodiversity !!}
                             </textarea>
                         </div>
                     </div>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 use App\State;
-use App\Location;
 
 class StateController extends Controller
 {

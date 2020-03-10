@@ -5,13 +5,24 @@
 @stop
 
 @section('content')
-    <form action="{{route('locations.store')}}" method="POST">
+    <form action="{{route('locations.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="hidden" value="0" name="lat" id="lat">
         <input type="hidden" value="0" name="lng" id="lng">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
                 <div class="row">
+                    <div class="col-12">
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
                     <div class="col-12 col-md-8">
                         <div class="form-group">
                             <label for="name">Nombre*</label>
@@ -27,6 +38,12 @@
                                     <option value="{{$state->id}}">{{$state->name}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="image">Imagen (max:2048 px)*</label>
+                            <input type="file" id="image" name="image" >
                         </div>
                     </div>
                     <div class="col-12">

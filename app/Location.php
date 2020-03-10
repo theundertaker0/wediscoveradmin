@@ -11,6 +11,7 @@ class Location extends Model
     protected $fillable=[
         'name',
         'short_description',
+        'image',
         'description',
         'state_id',
         'biodiversity',

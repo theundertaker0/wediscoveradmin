@@ -9,7 +9,8 @@
     <div class="row">
         <div class="col-12 col-md-8 offset-2">
             <div class="card">
-                <div class="card-header text-center bg-primary">
+                <img class="card-img-top" src="{{asset('images/locations/'.$location->image)}}" alt="Card image cap">
+                <div class="card-title text-center bg-primary">
                     <h4 class="text-bold">{{$location->name}}</h4>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -26,7 +27,7 @@
                     </li>
                     <li class="list-group-item">
                         <p class="text-bold"> Descripción Corta:</p>
-                        <p>{{$location->short_description}}</p>
+                        <p>{!!$location->short_description!!}</p>
                     </li>
 
                     <li class="list-group-item">

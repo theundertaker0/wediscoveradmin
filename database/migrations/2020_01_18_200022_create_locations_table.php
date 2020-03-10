@@ -17,6 +17,7 @@ class CreateLocationsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name',500);
             $table->string('short_description',500);
+            $table->string('image',300);
             $table->bigInteger('state_id')->unsigned();
             $table->foreign('state_id')->references('id')->on('states');
             $table->text('description')->nullable();
