@@ -78,6 +78,12 @@
                         </div>
                     </div>
                     <!--Áreas de texto para biodiversidad y clima-->
+                    <div class="form-group">
+                        <label for="description">Descripción</label>
+                        <textarea name="description" id="description" class="form-control tinymce">
+                            {!! $state->description !!}
+                        </textarea>
+                    </div>
                     <div class="col-12">
                         <div class="form-group">
                             <label for="biosecurity">Bioseguridad</label>
@@ -110,6 +116,7 @@
     <script>
         CKEDITOR.replace('biosecurity');
         CKEDITOR.replace('weather');
+        CKEDITOR.replace('description')
         //Captura las coordenadas de donde se soltó el mapa
         function coordenadas(mapas) {
             $('#lat').val(mapas[0].markers[0].getPosition().lat());

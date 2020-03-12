@@ -77,6 +77,12 @@
                     <!--Áreas de texto para bioseguridad y clima-->
                     <div class="col-12">
                         <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <textarea name="description" id="description" class="form-control tinymce"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
                             <label for="biosecurity">Bioseguridad</label>
                             <textarea name="biosecurity" id="biosecurity" class="form-control tinymce"></textarea>
                         </div>
@@ -105,6 +111,7 @@
     <script>
         CKEDITOR.replace('biosecurity');
         CKEDITOR.replace('weather');
+        CKEDITOR.replace('description');
         //Captura las coordenadas de donde se soltó el mapa
         function coordenadas(mapas) {
             $('#lat').val(mapas[0].markers[0].getPosition().lat());
