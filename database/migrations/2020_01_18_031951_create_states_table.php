@@ -18,7 +18,7 @@ class CreateStatesTable extends Migration
             $table->string('name',200);
             $table->string('short_name',10)->nullable();
             $table->string('image',300);
-            $table->longText('description');('description')->nullable();
+            $table->longText('description')->nullable();
             $table->longText('biosecurity')->nullable();
             $table->longText('weather')->nullable();
             $table->string('police_number',20)->nullable();
