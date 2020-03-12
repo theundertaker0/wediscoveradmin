@@ -78,11 +78,13 @@
                         </div>
                     </div>
                     <!--Áreas de texto para biodiversidad y clima-->
-                    <div class="form-group">
-                        <label for="description">Descripción</label>
-                        <textarea name="description" id="description" class="form-control tinymce">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <textarea name="description" id="description" class="form-control tinymce">
                             {!! $state->description !!}
                         </textarea>
+                        </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
