@@ -174,8 +174,8 @@ class LocationController extends Controller
 
     //Funciones de la API
 
-    public function getLocations(){
-        $locations=DB::table('locations')->select('id','name','image','short_description','lat','lng')->get();
+    public function getLocations($id){
+        $locations=DB::table('locations')->select('id','name','image','short_description','lat','lng')->where('state_id',$id)->get();
         return response()->json($locations);
     }
 
