@@ -27,7 +27,7 @@
                                 <td>{{$location->id}}</td>
                                 <td>{{$location->name}}</td>
                                 <td>{{$location->state->name}}</td>
-                                <td class="text-center"><img src="{{ asset('/images/locations/'.$location->image) }}" class="img-thumbnail" width="75" /></td>
+                                <td class="text-center"><img src="{{ url('https://wediscoverfinal.s3.amazonaws.com/'.$location->image) }}" class="img-thumbnail" width="75" /></td>
                                 <td class="text-center">
                                     <a href="{{route('locations.show',$location->id)}}" class="btn btn-secondary text-white"><span class="fa fa-eye"></span></a>
                                 </td>

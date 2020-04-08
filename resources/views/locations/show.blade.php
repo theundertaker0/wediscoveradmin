@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12 col-md-8 offset-2">
             <div class="card">
-                <img class="card-img-top" src="{{asset('images/locations/'.$location->image)}}" alt="Card image cap">
+                <img class="card-img-top" src="{{url('https://wediscoverfinal.s3.amazonaws.com/'.$location->image)}}" alt="Card image cap">
                 <div class="card-title text-center bg-primary">
                     <h4 class="text-bold">{{$location->name}}</h4>
                 </div>

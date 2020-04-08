@@ -7,6 +7,7 @@ use App\State;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class LocationController extends Controller
 {
@@ -46,12 +47,11 @@ class LocationController extends Controller
             'image'         =>  'required|image|max:2048'
         ]);
         $image = $request->file('image');
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images/locations'), $new_name);
+        $upload=Storage::disk('s3')->put('locations/'.$image->getClientOriginalName(),$image,'public');
         $form_data = array(
             'name'       =>   $request->name,
             'short_description'        =>   $request->short_description,
-            'image'            =>   $new_name,
+            'image'            =>   $upload,
             'state_id'=>$request->state_id,
             'description'       =>   $request->description,
             'biodiversity'        =>   $request->biodiversity,
@@ -121,17 +121,14 @@ class LocationController extends Controller
                 'image'         =>  'image|max:2048'
             ]);
 
-            $oldImg=public_path().'/images/locations/'.$image_name;
-            if(@getimagesize($oldImg)){
-                unlink($oldImg);
-            }
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images/locations'), $image_name);
+            $upload=Storage::disk('s3')->put('locations/'.$image->getClientOriginalName(),$image,'public');
+        }else{
+            $upload=$image_name;
         }
         $form_data = array(
             'name'       =>   $request->name,
             'short_description'        =>   $request->short_description,
-            'image'            =>   $image_name,
+            'image'            =>   $upload,
             'state_id'=>$request->state_id,
             'description'       =>   $request->description,
             'biodiversity'        =>   $request->biodiversity,
