@@ -27,7 +27,7 @@
                                 <td>{{$state->id}}</td>
                                 <td>{{$state->name}}</td>
                                 <td>{{$state->short_name}}</td>
-                                <td class="text-center"><img src="{{ asset('/images/states/'.$state->image) }}" class="img-thumbnail" width="75" /></td>
+                                <td class="text-center"><img src="{{ url('https://wediscoverfinal.s3.amazonaws.com/'.$state->image) }}" class="img-thumbnail" width="75" /></td>
                                 <td class="text-center">
                                     <a href="{{route('states.show',$state->id)}}" class="btn btn-secondary text-white"><span class="fa fa-eye"></span></a>
                                 </td>

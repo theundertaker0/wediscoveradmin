@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 use App\State;
+use Illuminate\Support\Facades\Storage;
 
 class StateController extends Controller
 {
@@ -43,12 +44,11 @@ class StateController extends Controller
             'image'         =>  'required|image|max:2048'
         ]);
         $image = $request->file('image');
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images/states'), $new_name);
+        $upload=Storage::disk('s3')->put('states/'.$image->getClientOriginalName(),$image,'public');
         $form_data = array(
             'name'       =>   $request->name,
             'short_name'        =>   $request->short_name,
-            'image'            =>   $new_name,
+            'image'            =>   $upload,
             'description'       =>   $request->description,
             'biosecurity'        =>   $request->biosecurity,
             'ext1'            =>  $request->ext1,
@@ -111,18 +111,15 @@ class StateController extends Controller
             $request->validate([
                'image'         =>  'image|max:2048'
             ]);
+            $upload=Storage::disk('s3')->put('states/'.$image->getClientOriginalName(),$image,'public');
 
-            $oldImg=public_path().'/images/states/'.$image_name;
-            if(@getimagesize($oldImg)){
-                unlink($oldImg);
-            }
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images/states'), $image_name);
+        }else{
+            $upload=$image_name;
         }
         $form_data = array(
             'name'       =>   $request->name,
             'short_name'        =>   $request->short_name,
-            'image'            =>   $image_name,
+            'image'            =>   $upload,
             'description'       =>   $request->description,
             'biosecurity'        =>   $request->biosecurity,
             'ext1'            =>  $request->ext1,

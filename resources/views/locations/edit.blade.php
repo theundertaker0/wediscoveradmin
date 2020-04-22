@@ -49,8 +49,8 @@
                         <div class="form-group">
                             <label for="image">Imagen (max:2048 px)*</label>
                             <input type="file" id="image" name="image" >
-                            <img src="{{asset('images/locations/'.$location->image)}}" class="img-thumbnail" width="100" />
-                            <input type="hidden" name="hidden_image" value="{{ $state->image }}" />
+                            <img src="{{url('https://wediscoverfinal.s3.amazonaws.com/'.$location->image)}}" class="img-thumbnail" width="100" />
+                            <input type="hidden" name="hidden_image" value="{{ $location->image }}" />
                         </div>
                     </div>
                     <div class="col-12">
