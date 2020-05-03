@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="environmental">Ambiental</label>
+                            <label for="environmental">Ambiente</label>
                             <textarea name="environmental" id="environmental" class="form-control"></textarea>
                         </div>
                     </div>

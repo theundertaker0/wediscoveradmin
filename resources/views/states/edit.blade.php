@@ -96,7 +96,7 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="weather">Recomendaciones climáticas</label>
+                            <label for="weather">Geografía y clima</label>
                             <textarea name="weather" id="weather" class="form-control">
                                 {!! $state->weather !!}
                             </textarea>
