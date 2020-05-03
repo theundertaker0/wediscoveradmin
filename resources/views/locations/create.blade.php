@@ -118,6 +118,12 @@
                             <textarea name="gastronomy" id="gastronomy" class="form-control"></textarea>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="biblio">Bibliografía</label>
+                            <textarea name="biblio" id="biblio" class="form-control"></textarea>
+                        </div>
+                    </div>
                     <!-- Botonera -->
                     <div class="col-12 text-center">
                         <a href="{{route('locations.index')}}" class="btn btn-danger">Cancelar</a>
@@ -141,6 +147,7 @@
         CKEDITOR.replace('sustainable_development');
         CKEDITOR.replace('demography');
         CKEDITOR.replace('gastronomy');
+        CKEDITOR.replace('biblio')
         //Captura las coordenadas de donde se soltó el mapa
         function coordenadas(mapas) {
             $('#lat').val(mapas[0].markers[0].getPosition().lat());
