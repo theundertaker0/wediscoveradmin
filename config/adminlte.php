@@ -218,6 +218,17 @@ return [
             'url'  => 'questions',
             'icon' => 'fas fa-fw fa-question',
         ],
+        ['header' => 'GLOSARIO'],
+        [
+            'text' => 'Nueva Palabra',
+            'url'  => 'definitions/create',
+            'icon' => 'fas fa-fw fa-plus',
+        ],
+        [
+            'text' => 'Administrar Glosario',
+            'url'  => 'definitions',
+            'icon' => 'fas fa-fw fa-question',
+        ],
 
     ],
 
