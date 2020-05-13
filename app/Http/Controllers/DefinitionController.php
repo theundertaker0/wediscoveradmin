@@ -36,7 +36,7 @@ class DefinitionController extends Controller
      */
     public function store(Request $request)
     {
-        Question::create($request->all());
+        Definition::create($request->all());
         toastr()->success('Definición guardada con éxito');
         return redirect()->route('definitions.index');
     }
@@ -49,7 +49,7 @@ class DefinitionController extends Controller
      */
     public function show($id)
     {
-        $question=Definition::find($id);
+        $definition=Definition::find($id);
         return view('definitions.show',compact('definition'));
     }
 
@@ -61,7 +61,7 @@ class DefinitionController extends Controller
      */
     public function edit($id)
     {
-        $question=Definition::find($id);
+        $definition=Definition::find($id);
         return view('definition.edit',compact('definition'));
     }
 
@@ -74,8 +74,8 @@ class DefinitionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $question=Definition::find($id);
-        $question->update($request->all());
+        $definition=Definition::find($id);
+        $definition->update($request->all());
         toastr()->success('Definición editada con éxito');
         return redirect()->route('definition.index');
     }
@@ -88,8 +88,8 @@ class DefinitionController extends Controller
      */
     public function destroy($id)
     {
-        $question=Definition::find($id);
-        $question->delete();
+        $definition=Definition::find($id);
+        $definition->delete();
         toastr()->success('Definición eliminada con éxito');
         return redirect()->route('definition.index');
 
