@@ -28,4 +28,5 @@ Route::group(['before' => 'auth'], function () {
     Route::resource('states','StateController');
     Route::resource('locations','LocationController');
     Route::resource('questions','QuestionController');
+    Route::resource('definitions','DefinitionController');
 });
