@@ -13,14 +13,14 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="word">Pregunta*</label>
-                            <input type="text" name="word" id="word" class="form-control" placeholder="ej. Botánica" maxlength="250" required value="{{$definition->definition}}">
+                            <label for="word">Palabra*</label>
+                            <input type="text" name="word" id="word" class="form-control" placeholder="ej. Botánica" maxlength="250" required value="{{$definition->word}}">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="definition">Respuesta*</label>
-                            <textarea name="definition" id="definition" class="form-control" required>{{$definition->answer}}
+                            <label for="definition">Definición*</label>
+                            <textarea name="definition" id="definition" class="form-control" required>{{$definition->definition}}
                             </textarea>
                         </div>
                     </div>
