@@ -14,7 +14,7 @@
                         <tr>
                             <th class="text-center">Id</th>
                             <th class="text-center">Palabra</th>
-                            <th class="text-center">definición</th>
+                            <th class="text-center">Definición</th>
                             <th class="text-center">Editar</th>
                             <th class="text-center">Eliminar</th>
                         </tr>
