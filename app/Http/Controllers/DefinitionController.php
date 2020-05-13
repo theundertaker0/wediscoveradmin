@@ -14,7 +14,7 @@ class DefinitionController extends Controller
      */
     public function index()
     {
-        $questions=Definition::all();
+        $definitions=Definition::all();
         return view('definitions.index',compact('definitions'));
     }
 
