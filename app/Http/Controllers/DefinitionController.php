@@ -62,7 +62,7 @@ class DefinitionController extends Controller
     public function edit($id)
     {
         $definition=Definition::find($id);
-        return view('definition.edit',compact('definition'));
+        return view('definitions.edit',compact('definition'));
     }
 
     /**
@@ -77,7 +77,7 @@ class DefinitionController extends Controller
         $definition=Definition::find($id);
         $definition->update($request->all());
         toastr()->success('Definición editada con éxito');
-        return redirect()->route('definition.index');
+        return redirect()->route('definitions.index');
     }
 
     /**
@@ -91,7 +91,7 @@ class DefinitionController extends Controller
         $definition=Definition::find($id);
         $definition->delete();
         toastr()->success('Definición eliminada con éxito');
-        return redirect()->route('definition.index');
+        return redirect()->route('definitions.index');
 
     }
 
