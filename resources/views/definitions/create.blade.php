@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <form action="{{route('definition.store')}}" method="POST">
+    <form action="{{route('definitions.store')}}" method="POST">
         @csrf
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
