@@ -95,9 +95,9 @@ class DefinitionController extends Controller
 
     }
 
-    public function getFaqs(){
-        $faqs=Question::all();
-        return response()->json($faqs);
+    public function getDefinitions(){
+        $definitions=Definition::all();
+        return response()->json($definitions);
     }
 
 }
