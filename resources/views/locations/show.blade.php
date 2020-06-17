@@ -70,6 +70,10 @@
                         <p class="text-bold"> Gastronomía:</p>
                         <p>{!!$location->gastronomy!!}</p>
                     </li>
+                    <li class="list-group-item">
+                        <p class="text-bold"> Atractivos Turísticos:</p>
+                        <p>{!!$location->biblio!!}</p>
+                    </li>
                 </ul>
             </div>
         </div>

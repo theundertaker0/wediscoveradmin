@@ -137,7 +137,7 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="biblio">Bibliografía</label>
+                            <label for="biblio">Atractivos Turísticos</label>
                             <textarea name="biblio" id="biblio" class="form-control">{!! $location->biblio!!}</textarea>
                         </div>
                     </div>
