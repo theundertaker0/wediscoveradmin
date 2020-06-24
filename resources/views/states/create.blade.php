@@ -53,25 +53,25 @@
                     <div class="col-6 col-md-3">
                         <div class="form-group">
                             <label for="police_number">Policía</label>
-                            <input type="text" name="police_number" id="police_number" class="form-control" placeholder="ej. 9999999999" maxlength="20" minlength="10" pattern="[0-9]+">
+                            <input type="text" name="police_number" id="police_number" class="form-control" placeholder="ej. 9999999999" maxlength="20" minlength="3" pattern="[0-9]+">
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
                         <div class="form-group">
                             <label for="firemen_number">Bomberos</label>
-                            <input type="text" name="firemen_number" id="firemen_number" class="form-control" placeholder="ej. 9999999999" maxlength="20" minlength="10" pattern="[0-9]+">
+                            <input type="text" name="firemen_number" id="firemen_number" class="form-control" placeholder="ej. 9999999999" maxlength="20" minlength="3" pattern="[0-9]+">
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
                         <div class="form-group">
                             <label for="medical_number">Servicios Médicos</label>
-                            <input type="text" name="medical_number" id="medical_number" class="form-control" placeholder="ej. 9999999999" maxlength="20" minlength="10" pattern="[0-9]+">
+                            <input type="text" name="medical_number" id="medical_number" class="form-control" placeholder="ej. 9999999999" maxlength="20" minlength="3" pattern="[0-9]+">
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
                         <div class="form-group">
                             <label for="government_number">Gobierno</label>
-                            <input type="text" name="government_number" id="government_number" class="form-control" placeholder="ej. 9999999999" maxlength="20" minlength="10" pattern="[0-9]+">
+                            <input type="text" name="government_number" id="government_number" class="form-control" placeholder="ej. 9999999999" maxlength="20" minlength="3" pattern="[0-9]+">
                         </div>
                     </div>
                     <!--Áreas de texto para bioseguridad y clima-->
