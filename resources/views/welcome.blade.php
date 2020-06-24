@@ -67,17 +67,17 @@
             }
         </style>
     </head>
-    <body>
+    <body style="background-color: black">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links" >
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}" style="color: white;">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Ingresar</a>
+                        <a href="{{ route('login') }}" style="color: white;">Ingresar</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}" style="color: white;">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -88,7 +88,7 @@
                     <img src="{{asset('img/logowediscovernew.png')}}" class="logo" alt="Logo WeDiscover">
                 </div>
 
-                <div class="links">
+                <div class="links" style="color:white;">
                    Espacio para redes sociales
                 </div>
             </div>
