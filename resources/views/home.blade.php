@@ -3,7 +3,7 @@
 @section('content_header')
     <h1 class="text-center">Bienvenido al Escritorio del Administrador de WeDiscover</h1>
     <div class="text-center">
-        <img src="{{asset('img/logowediscovernew.png)}}" alt="Logo WeDiscover" style="max-width: 320px">
+        <img src="{{asset('img/logowediscovernew.png')}}" alt="Logo WeDiscover" style="max-width: 320px">
     </div>
 @stop
 
