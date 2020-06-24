@@ -31,7 +31,7 @@ return [
     */
 
     'logo' => '<b>We</b>Discover',
-    'logo_img' => 'vendor/adminlte/dist/img/logosolo128px.png',
+    'logo_img' => 'vendor/adminlte/dist/img/logowediscovernewSolo.png',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',

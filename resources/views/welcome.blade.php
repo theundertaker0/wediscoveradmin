@@ -85,7 +85,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <img src="{{asset('img/logowediscovernew.jpeg')}}" class="logo" alt="Logo WeDiscover">
+                    <img src="{{asset('img/logowediscovernew.png')}}" class="logo" alt="Logo WeDiscover">
                 </div>
 
                 <div class="links">
